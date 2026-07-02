@@ -196,7 +196,6 @@
   .logo-icon {
     font-size: 1.5rem;
     background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -211,6 +210,7 @@
     font-size: 0.9375rem;
     font-weight: 500;
     color: var(--color-text-muted);
+    -webkit-transition: color var(--duration-fast) ease;
     transition: color var(--duration-fast) ease;
     position: relative;
   }
@@ -235,6 +235,8 @@
     background: var(--color-primary);
     color: #fff !important;
     padding: 0.5rem 1.25rem;
+    -moz-border-radius: var(--radius-full);
+    -webkit-border-radius: var(--radius-full);
     border-radius: var(--radius-full);
   }
 
@@ -258,7 +260,9 @@
     width: 24px;
     height: 2px;
     background: var(--color-text-heading);
+    -webkit-transition: all var(--duration-normal) ease;
     transition: all var(--duration-normal) ease;
+    -moz-border-radius: 2px;
     border-radius: 2px;
   }
 
@@ -286,11 +290,15 @@
   }
 
   .nav-toggle--active .hamburger::before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     top: 0;
   }
 
   .nav-toggle--active .hamburger::after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
     top: 0;
   }
@@ -431,9 +439,12 @@
     padding: 0.875rem 2rem;
     font-size: 0.9375rem;
     font-weight: 600;
+    -moz-border-radius: var(--radius-full);
+    -webkit-border-radius: var(--radius-full);
     border-radius: var(--radius-full);
     border: none;
     cursor: pointer;
+    -webkit-transition: all var(--duration-normal) var(--ease-out);
     transition: all var(--duration-normal) var(--ease-out);
     white-space: nowrap;
   }
@@ -445,7 +456,10 @@
   }
 
   .btn-primary:hover {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
     transform: translateY(-2px);
+    -webkit-box-shadow: 0 8px 32px rgba(102, 126, 234, 0.45);
     box-shadow: 0 8px 32px rgba(102, 126, 234, 0.45);
   }
 
@@ -461,6 +475,7 @@
   }
 
   .btn-full {
+    width: -moz-available;
     width: fill-available;
   }
 
@@ -483,9 +498,14 @@
 
   .service-card {
     background: var(--color-bg-card);
+    -moz-border-radius: var(--radius-lg);
+    -webkit-border-radius: var(--radius-lg);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     border: 1px solid var(--color-border);
+    -webkit-transition: border-color var(--duration-normal) ease,
+      -webkit-transform var(--duration-normal) var(--ease-out),
+      -webkit-box-shadow var(--duration-normal) ease;
     transition: border-color var(--duration-normal) ease,
       transform var(--duration-normal) var(--ease-out),
       box-shadow var(--duration-normal) ease;
@@ -493,7 +513,10 @@
 
   .service-card:hover {
     border-color: rgba(102, 126, 234, 0.3);
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
     transform: translateY(-4px);
+    -webkit-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   }
 
@@ -503,6 +526,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    -moz-border-radius: var(--radius-md);
+    -webkit-border-radius: var(--radius-md);
     border-radius: var(--radius-md);
     background: rgba(102, 126, 234, 0.1);
     color: var(--color-primary-light);
@@ -538,6 +563,8 @@
     font-size: 0.75rem;
     font-weight: 500;
     padding: 0.25rem 0.75rem;
+    -moz-border-radius: var(--radius-full);
+    -webkit-border-radius: var(--radius-full);
     border-radius: var(--radius-full);
     background: rgba(102, 126, 234, 0.08);
     color: var(--color-primary-light);
@@ -559,14 +586,19 @@
 
   .work-item {
     position: relative;
+    -moz-border-radius: var(--radius-lg);
+    -webkit-border-radius: var(--radius-lg);
     border-radius: var(--radius-lg);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    -webkit-transition: -webkit-transform var(--duration-normal) var(--ease-out);
     transition: transform var(--duration-normal) var(--ease-out);
   }
 
   .work-item:hover {
+    -webkit-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
     transform: translateY(-4px);
   }
 
@@ -589,6 +621,7 @@
     position: absolute;
     inset: 0;
     background: inherit;
+    -webkit-transition: -webkit-transform var(--duration-slow) var(--ease-out);
     transition: transform var(--duration-slow) var(--ease-out);
   }
 
@@ -652,6 +685,8 @@
 
   .testimonial-card {
     background: var(--color-bg-card);
+    -moz-border-radius: var(--radius-lg);
+    -webkit-border-radius: var(--radius-lg);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     border: 1px solid var(--color-border);
@@ -685,6 +720,8 @@
   .author-avatar {
     width: 44px;
     height: 44px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     border-radius: 50%;
     background: linear-gradient(
       135deg,
@@ -747,6 +784,7 @@
   .contact-detail a {
     color: var(--color-text-heading);
     font-weight: 500;
+    -webkit-transition: color var(--duration-fast) ease;
     transition: color var(--duration-fast) ease;
   }
 
@@ -778,9 +816,13 @@
     padding: 0.875rem 1rem;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
+    -moz-border-radius: var(--radius-sm);
+    -webkit-border-radius: var(--radius-sm);
     border-radius: var(--radius-sm);
     color: var(--color-text-heading);
     font-size: 0.9375rem;
+    -webkit-transition: border-color var(--duration-fast) ease,
+      -webkit-box-shadow var(--duration-fast) ease;
     transition: border-color var(--duration-fast) ease,
       box-shadow var(--duration-fast) ease;
     appearance: none;
@@ -798,6 +840,7 @@
   .form-group textarea:focus {
     outline: none;
     border-color: var(--color-primary);
+    -webkit-box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
   }
 
@@ -850,6 +893,7 @@
   .footer-links a {
     font-size: 0.9375rem;
     color: var(--color-text);
+    -webkit-transition: color var(--duration-fast) ease;
     transition: color var(--duration-fast) ease;
   }
 
@@ -872,13 +916,19 @@
 @layer components {
   .fade-in {
     opacity: 0;
+    -webkit-transform: translateY(24px);
+    -ms-transform: translateY(24px);
     transform: translateY(24px);
+    -webkit-transition: opacity 0.6s var(--ease-out),
+      -webkit-transform 0.6s var(--ease-out);
     transition: opacity 0.6s var(--ease-out),
       transform 0.6s var(--ease-out);
   }
 
   .fade-in--visible {
     opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
   }
 
@@ -892,6 +942,50 @@
   .work-item.fade-in:nth-child(5) { transition-delay: 0.25s; }
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════
+   @supports — Feature Detection Guards (unwrapped)
+   These features are Baseline-available and no longer need guards.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.services-grid,
+.work-grid,
+.testimonials-grid,
+.contact-grid,
+.footer-grid {
+  display: grid;
+}
+
+.nav-container,
+.hero-actions,
+.hero-stats,
+.nav-links,
+.service-tags,
+.contact-form {
+  display: flex;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+}
+
+.work-image-inner {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: var(--color-bg);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
 
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -989,7 +1083,11 @@
     gap: var(--space-xl);
     opacity: 0;
     visibility: hidden;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
     transform: translateY(-20px);
+    -webkit-transition: opacity 0.3s ease, visibility 0.3s ease,
+      -webkit-transform 0.3s ease;
     transition: opacity 0.3s ease, visibility 0.3s ease,
       transform 0.3s ease;
   }
@@ -997,6 +1095,8 @@
   .nav-links.nav-open {
     opacity: 1;
     visibility: visible;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
   }
 
