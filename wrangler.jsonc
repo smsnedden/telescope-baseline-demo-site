@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "telescope-baseline-demo-site",
+  "compatibility_date": "2025-07-07",
+  "assets": {
+    "directory": "."
+  }
+}
